@@ -34,3 +34,6 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 bluetooth.profile.tbs.server.enabled=true
 bluetooth.profile.vc.server.enabled=true
+
+# LineageOS Updater (v2 API)
+lineage.updater.uri=https://raw.githubusercontent.com/tylxr59/lineageos-for-gta4xlveu/main/ota/gta4xlveu.json
