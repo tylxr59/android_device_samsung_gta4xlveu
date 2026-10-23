@@ -1,3 +1,8 @@
 # This is for randomly generated TEE directories in /efs
 allow tee efs_file:dir { search read write open add_name };
 allow tee efs_file:file { read write open getattr create };
+
+# QSEECom proxies Samsung Gatekeeper's persistent secure-failure records.
+# These rules previously lived in an unincluded private policy directory.
+allow tee gatekeeper_vendor_data_file:dir { write add_name read open search };
+allow tee gatekeeper_vendor_data_file:file { create write open read getattr };
