@@ -1,0 +1,12 @@
+# Temporary userdebug diagnostics for boot failures before /data is mounted.
+# Remove after the boot investigation. Cache logs stay on the owner's device.
+on post-fs
+    mkdir /cache/los24-bootlog 0700 root root
+    start los24-bootlog
+
+service los24-bootlog /system/bin/logcat -b all -v threadtime -f /cache/los24-bootlog/logcat.txt -r 8192 -n 2
+    user root
+    group root log readproc
+    seclabel u:r:su:s0
+    disabled
+    oneshot

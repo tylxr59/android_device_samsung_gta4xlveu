@@ -104,6 +104,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
 
+ifneq ($(filter userdebug eng,$(TARGET_BUILD_VARIANT)),)
+# Temporary cache logging while investigating the early storage boot stall.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/los24-bootlog.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/los24-bootlog.rc
+endif
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
