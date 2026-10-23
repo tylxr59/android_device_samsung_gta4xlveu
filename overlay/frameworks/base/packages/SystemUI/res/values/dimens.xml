@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Keep a 24dp icon inside the 72dp non-UDFPS device-entry target.
+         The upstream 48px padding leaves only 12px at this tablet's density. -->
+    <dimen name="lock_icon_padding">24dp</dimen>
+</resources>
