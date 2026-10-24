@@ -68,10 +68,7 @@ ro.sys.fw.dex2oat_thread_count=8
 dalvik.vm.boot-dex2oat-threads=8
 dalvik.vm.dex2oat-threads=8
 dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.dex2oat-filter=quicken
-dalvik.vm.dex2oat-threads=8
 dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.image-dex2oat-filter=quicken
 dalvik.vm.image-dex2oat-threads=8
 dalvik.vm.dex2oat-minidebuginfo=false
 dalvik.vm.minidebuginfo=false
@@ -116,7 +113,6 @@ ro.config.pageboost.vramdisk.minimize=true
 
 # Display
 debug.egl.hw=0
-debug.sf.disable_backpressure=1
 debug.sf.early_app_phase_offset_ns=100000
 debug.sf.early_gl_app_phase_offset_ns=100000
 debug.sf.early_gl_phase_offset_ns=100000
@@ -126,7 +122,6 @@ debug.sf.high_fps_early_gl_phase_offset_ns=100000
 debug.sf.high_fps_early_phase_offset_ns=100000
 debug.sf.high_fps_late_app_phase_offset_ns=100000
 debug.sf.high_fps_late_sf_phase_offset_ns=100000
-debug.sf.hw=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.hs_mode=0
 ro.hardware.egl=adreno
