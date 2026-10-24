@@ -640,7 +640,7 @@ vendor/lib64/hw/gatekeeper.mdfpp.so
 # GPS
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
 vendor/bin/loc_launcher
-vendor/bin/lowi-server;DISABLE_CHECKELF
+vendor/bin/lowi-server
 vendor/bin/xtra-daemon
 vendor/etc/flp.conf
 vendor/etc/gnss_antenna_info.conf
@@ -729,9 +729,9 @@ vendor/lib/libFlacSwDec.so
 vendor/lib/libFrucSSMLib.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libMpeg4SwEncoder.so
-vendor/lib/libOmxSwVdec.so;DISABLE_CHECKELF
-vendor/lib/libOmxSwVencMpeg4.so;DISABLE_CHECKELF
-vendor/lib/libapex_cmn.so;DISABLE_CHECKELF
+vendor/lib/libOmxSwVdec.so
+vendor/lib/libOmxSwVencMpeg4.so
+vendor/lib/libapex_cmn.so
 vendor/lib/libapex_utils.so
 vendor/lib/libcodecsolutionhelper_vendor.so
 vendor/lib/libdsd2pcm.so
@@ -747,8 +747,8 @@ vendor/lib/vintf-codecsolution-V2-ndk_platform.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libMpeg4SwEncoder.so
-vendor/lib64/libOmxSwVdec.so;DISABLE_CHECKELF
-vendor/lib64/libOmxSwVencMpeg4.so;DISABLE_CHECKELF
+vendor/lib64/libOmxSwVdec.so
+vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libcodecsolutionhelper_vendor.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libmmosal.so
