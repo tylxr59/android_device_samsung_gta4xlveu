@@ -3,12 +3,10 @@ genfscon proc /last_kmsg                                                        
 
 # sysfs
 genfscon sysfs /bus/iio/devices                                                                             u:object_r:sysfs_iio:s0
-
 genfscon sysfs /class/input                                                                                 u:object_r:sysfs_input:s0
 genfscon sysfs /class/sec/tsp                                                                               u:object_r:sysfs_sec_touchscreen:s0
-genfscon sysfs /class/sensor_event                                                                          u:object_r:sysfs_sensors:s0
+genfscon sysfs /class/sensor_event                                                                          u:object_r:vendor_sysfs_sensors:s0
 genfscon sysfs /kernel/boot_wlan/                                                                           u:object_r:sysfs_wifi_writable:s0
-
 genfscon sysfs /devices/virtual/mdnie                                                                       u:object_r:sysfs_mdnie_writable:s0
 genfscon sysfs /devices/virtual/input/                                                                      u:object_r:sysfs_input:s0
 genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-23/23-0049/input/                                       u:object_r:sysfs_power_writable:s0
@@ -26,8 +24,8 @@ genfscon sysfs /devices/platform/soc/890000.i2c/i2c-22/22-0049/                 
 genfscon sysfs /devices/platform/soc/890000.i2c/i2c-22/22-0057/                                             u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/soc/88c000.qcom,qup_uart/wakeup/                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_mp3/wakeup28                                                       u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/sensors/                                                                    u:object_r:sysfs_sensors:s0
-genfscon sysfs /devices/virtual/sec/hall_ic/                                                                u:object_r:sysfs_sensors:s0
+genfscon sysfs /devices/virtual/sensors/                                                                    u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/virtual/sec/hall_ic/                                                                u:object_r:vendor_sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sec/sec_key                                                                 u:object_r:sysfs_sec_key:s0
 genfscon sysfs /devices/virtual/sec/tsp                                                                     u:object_r:sysfs_sec_touchscreen:s0
 genfscon sysfs /devices/virtual/sec/tsp/cmd                                                                 u:object_r:sysfs_touchscreen_writable:s0
@@ -42,9 +40,53 @@ genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                 
 genfscon sysfs /devices/virtual/sec/sec-ap-thermistor/                                                      u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/sec/sec-pa-thermistor/                                                      u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/sec/sec-wf-thermistor/                                                      u:object_r:sysfs_thermal:s0
-
 genfscon sysfs /power/                                                                                      u:object_r:sysfs_power_writable:s0
-
 genfscon sysfs /wifi                                                                                        u:object_r:sysfs_wifi:s0
 genfscon sysfs /wifi/mac_addr                                                                               u:object_r:sysfs_wifi_writable:s0
 genfscon sysfs /wifi/memdump                                                                                u:object_r:sysfs_wifi_writable:s0
+
+# Wakeup statistics reached through /sys/class/wakeup symlinks.
+# Prefixes deliberately omit dynamically allocated wakeup numbers.
+genfscon sysfs /devices/platform/soc/18800000.qcom,icnss/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/890000.i2c/i2c-20/20-0049/sm5714-charger/power_supply/otg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/890000.i2c/i2c-20/20-0049/sm5714-charger/power_supply/sm5714-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/890000.i2c/i2c-20/20-0049/sm5714-fuelgauge/power_supply/sm5714-fuelgauge/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/890000.i2c/i2c-20/20-0049/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a80000.spi/spi_master/spi1/spi1.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-21/21-0020/synaptics_tcm.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-21/21-0054/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,pm6150_rtc/rtc/rtc0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,pm6150_rtc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,power-on@800/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-04/c440000.qcom,spmi:qcom,pm6150l@4:qcom,power-on@800/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:battery/power_supply/ac/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:battery/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:battery/power_supply/pogo/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:battery/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:battery/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:gpio_keys/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:hall_ic/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/diag/diag/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_aac/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_alac/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_amrnb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_amrwb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_amrwbplus/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_ape/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_evrc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_g711alaw/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_g711mlaw/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_mp3/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_multi_aac/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_qcelp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_wma/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/msm_wmapro/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/wakeup u:object_r:sysfs_wakeup:s0
+
+# SM-P613 live SM5714 charger/fuel-gauge paths (I2C bus 20).
+genfscon sysfs /devices/platform/soc/890000.i2c/i2c-20/20-0049/sm5714-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/soc/890000.i2c/i2c-20/20-0049/sm5714-fuelgauge/power_supply u:object_r:sysfs_battery:s0

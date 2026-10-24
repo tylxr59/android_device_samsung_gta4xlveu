@@ -23,3 +23,6 @@ vendor.sensor.file.permission                    u:object_r:vendor_sensors_prop:
 
 # wifi
 vendor.wifi.                                     u:object_r:vendor_wifi_prop:s0
+
+# QSEECom startup status; avoid granting access to vendor_default_prop.
+vendor.sys.qseecomd.enable u:object_r:vendor_qseecomd_status_prop:s0 exact bool

@@ -1,7 +1,5 @@
 DEVICE_PATH := device/samsung/gta4xlveu
 
-BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -116,6 +114,14 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 include device/lineage/sepolicy/libion/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
+
+# Do not compile unused Qualcomm factory/test domains into this tablet product.
+BOARD_VENDOR_SEPOLICY_DIRS := $(filter-out \
+    device/qcom/sepolicy_vndr/legacy-um/generic/vendor/test \
+    device/qcom/sepolicy_vndr/legacy-um/qva/vendor/test \
+    device/qcom/sepolicy_vndr/legacy-um/qva/vendor/test/sysmonapp \
+    device/qcom/sepolicy_vndr/legacy-um/qva/vendor/test/mst_test_app,\
+    $(BOARD_VENDOR_SEPOLICY_DIRS))
 
 # System properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop

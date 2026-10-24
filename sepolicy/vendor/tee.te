@@ -6,3 +6,5 @@ allow tee efs_file:file { read write open getattr create };
 # These rules previously lived in an unincluded private policy directory.
 allow tee gatekeeper_vendor_data_file:dir { write add_name read open search };
 allow tee gatekeeper_vendor_data_file:file { create write open read getattr };
+
+set_prop(tee, vendor_qseecomd_status_prop)
