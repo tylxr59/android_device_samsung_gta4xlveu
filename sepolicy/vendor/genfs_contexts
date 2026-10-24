@@ -64,7 +64,6 @@ genfscon sysfs /devices/platform/soc/soc:battery/power_supply/pogo/wakeup u:obje
 genfscon sysfs /devices/platform/soc/soc:battery/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:battery/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:hall_ic/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/wakeup u:object_r:sysfs_wakeup:s0
 
 # SM-P613 live SM5714 charger/fuel-gauge paths (I2C bus 20).
 genfscon sysfs /devices/platform/soc/890000.i2c/i2c-20/20-0049/sm5714-charger/power_supply u:object_r:sysfs_battery:s0
