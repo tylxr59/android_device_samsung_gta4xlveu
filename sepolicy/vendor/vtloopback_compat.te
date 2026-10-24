@@ -1,0 +1,7 @@
+# Qualcomm's common hal_imsrtp policy references this app type on userdebug.
+# Keep the declaration after excluding factory-test policy, without restoring
+# the test app's network, diagnostic-device or service-access grants.
+userdebug_or_eng(`
+    type vtloopback_app, domain;
+    app_domain(vtloopback_app)
+')
