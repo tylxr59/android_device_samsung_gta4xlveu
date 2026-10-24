@@ -105,6 +105,9 @@ on post-fs-data
 on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
 
+    # Start reporting after thermal sysfs and vendor services are established.
+    start vendor.thermal-hal
+
     swapon_all /vendor/etc/fstab.default
 
 on early-init

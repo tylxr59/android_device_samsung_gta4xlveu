@@ -6,3 +6,9 @@ allow hal_thermal_default sysfs_battery:file { read open getattr };
 allow hal_thermal_default sysfs_power_writable:file { read open };
 
 allow hal_thermal_default hal_thermal_samsung_hwservice:hwservice_manager { add find };
+
+# Reporting-only thermal HAL: read kernel zone types/temperatures/policies.
+# No thermal trip or cooling-state writes are granted.
+allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
+allow hal_thermal_default sysfs_thermal:lnk_file r_file_perms;
+allow hal_thermal_default sysfs_thermal:file r_file_perms;

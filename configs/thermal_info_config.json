@@ -1,0 +1,178 @@
+{
+  "Comment": "SM-P613 reporting only. Existing step_wise trips: CPU120C/GPU95C; battery warm42C/overheat50C from Samsung battery DTS. No cooling devices, shutdown thresholds or power hints. Hardware validation pending. Raw physical sensors are hidden/unmonitored. Only virtual pass-through sensors are monitored, so initializeTrip skips all physical zones regardless of generic-netlink mode.",
+  "Sensors": [
+    {
+      "Name": "cpu-0-max-step",
+      "Type": "CPU",
+      "Hidden": true,
+      "Monitor": false,
+      "Multiplier": 0.001
+    },
+    {
+      "Name": "reported-cpu-0-max-step",
+      "Type": "CPU",
+      "Monitor": true,
+      "SendPowerHint": false,
+      "Multiplier": 0.001,
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        120,
+        "NAN",
+        "NAN",
+        "NAN"
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "PollingDelay": 5000,
+      "PassiveDelay": 1000,
+      "LogLevel": 3,
+      "VirtualSensor": true,
+      "Combination": [
+        "cpu-0-max-step"
+      ],
+      "Coefficient": [
+        "1.0"
+      ],
+      "Formula": "MAXIMUM"
+    },
+    {
+      "Name": "cpu-1-max-step",
+      "Type": "CPU",
+      "Hidden": true,
+      "Monitor": false,
+      "Multiplier": 0.001
+    },
+    {
+      "Name": "reported-cpu-1-max-step",
+      "Type": "CPU",
+      "Monitor": true,
+      "SendPowerHint": false,
+      "Multiplier": 0.001,
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        120,
+        "NAN",
+        "NAN",
+        "NAN"
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "PollingDelay": 5000,
+      "PassiveDelay": 1000,
+      "LogLevel": 3,
+      "VirtualSensor": true,
+      "Combination": [
+        "cpu-1-max-step"
+      ],
+      "Coefficient": [
+        "1.0"
+      ],
+      "Formula": "MAXIMUM"
+    },
+    {
+      "Name": "gpuss-max-step",
+      "Type": "GPU",
+      "Hidden": true,
+      "Monitor": false,
+      "Multiplier": 0.001
+    },
+    {
+      "Name": "reported-gpuss-max-step",
+      "Type": "GPU",
+      "Monitor": true,
+      "SendPowerHint": false,
+      "Multiplier": 0.001,
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        "NAN",
+        95,
+        "NAN",
+        "NAN",
+        "NAN"
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "PollingDelay": 5000,
+      "PassiveDelay": 1000,
+      "LogLevel": 3,
+      "VirtualSensor": true,
+      "Combination": [
+        "gpuss-max-step"
+      ],
+      "Coefficient": [
+        "1.0"
+      ],
+      "Formula": "MAXIMUM"
+    },
+    {
+      "Name": "battery",
+      "Type": "BATTERY",
+      "Hidden": true,
+      "Monitor": false,
+      "Multiplier": 0.001
+    },
+    {
+      "Name": "reported-battery",
+      "Type": "BATTERY",
+      "Monitor": true,
+      "SendPowerHint": false,
+      "Multiplier": 0.001,
+      "HotThreshold": [
+        "NAN",
+        "NAN",
+        42,
+        50,
+        "NAN",
+        "NAN",
+        "NAN"
+      ],
+      "HotHysteresis": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "PollingDelay": 5000,
+      "PassiveDelay": 1000,
+      "LogLevel": 3,
+      "VirtualSensor": true,
+      "Combination": [
+        "battery"
+      ],
+      "Coefficient": [
+        "1.0"
+      ],
+      "Formula": "MAXIMUM"
+    }
+  ],
+  "CoolingDevices": []
+}
