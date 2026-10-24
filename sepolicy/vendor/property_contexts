@@ -26,3 +26,8 @@ vendor.wifi.                                     u:object_r:vendor_wifi_prop:s0
 
 # QSEECom startup status; avoid granting access to vendor_default_prop.
 vendor.sys.qseecomd.enable u:object_r:vendor_qseecomd_status_prop:s0 exact bool
+
+# Preserve common HAL property labels after excluding test-policy directories.
+persist.vendor.debug.sensors. u:object_r:vendor_sensors_dbg_prop:s0
+vendor.debug.qspm u:object_r:vendor_qspm_dbg_prop:s0
+persist.vendor.debug.mux. u:object_r:vendor_wfd_vendor_debug_prop:s0
