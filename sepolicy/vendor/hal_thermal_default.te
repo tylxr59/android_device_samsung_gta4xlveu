@@ -19,3 +19,7 @@ hal_client_domain(hal_thermal_default, hal_power)
 
 # Read the three optional upstream configuration switches using narrow labels.
 get_prop(hal_thermal_default, vendor_gta4xlveu_thermal_prop)
+
+# Upstream thermal metrics use IStats in system_server; allow only that API.
+allow hal_thermal_default fwk_stats_service:service_manager find;
+binder_call(hal_thermal_default, stats_service_server)
