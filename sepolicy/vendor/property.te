@@ -8,3 +8,6 @@ vendor_internal_prop(vendor_qseecomd_status_prop)
 vendor_restricted_prop(vendor_sensors_dbg_prop)
 vendor_restricted_prop(vendor_qspm_dbg_prop)
 vendor_internal_prop(vendor_wfd_vendor_debug_prop)
+
+# Optional upstream Pixel thermal HAL configuration, read by the thermal HAL.
+vendor_internal_prop(vendor_gta4xlveu_thermal_prop)

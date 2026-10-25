@@ -12,3 +12,10 @@ allow hal_thermal_default hal_thermal_samsung_hwservice:hwservice_manager { add 
 allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
 allow hal_thermal_default sysfs_thermal:lnk_file r_file_perms;
 allow hal_thermal_default sysfs_thermal:file r_file_perms;
+
+# The upstream HAL connects to IPower before registering its own service,
+# even when this reporting-only configuration sends no power hints.
+hal_client_domain(hal_thermal_default, hal_power)
+
+# Read the three optional upstream configuration switches using narrow labels.
+get_prop(hal_thermal_default, vendor_gta4xlveu_thermal_prop)
