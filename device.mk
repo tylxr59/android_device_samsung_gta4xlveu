@@ -60,7 +60,10 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Bluetooth
+# The audio service loads this AIDL provider and its VINTF fragment.
+# The current Bluetooth stack discovers providers through VINTF.
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth@1.0.vendor \
