@@ -281,6 +281,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/hw/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
     $(LOCAL_PATH)/rootdir/etc/init.audio.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.audio.samsung.rc \
     $(LOCAL_PATH)/rootdir/etc/init.gta4xlve-common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.gta4xlve-common.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.gta4xlveu.xtra.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.gta4xlveu.xtra.rc \
     $(LOCAL_PATH)/rootdir/etc/init.qti.qcv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.qcv.rc \
     $(LOCAL_PATH)/rootdir/etc/init_thermal-engine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init_thermal-engine.rc \
     $(LOCAL_PATH)/rootdir/etc/init.time_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.time_daemon.rc \

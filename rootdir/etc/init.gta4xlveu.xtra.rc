@@ -1,0 +1,20 @@
+# Samsung's prebuilt libgps.utils does not consume Lineage's XTRA property.
+# izat.conf disables launcher ownership; init supervises only XTRA here.
+# Match its existing gps UID/GID, supplementary groups and SELinux transition
+# through vendor_location_exec, without changing the GNSS HAL or other children.
+service vendor.xtra-daemon /vendor/bin/xtra-daemon
+    class late_start
+    user gps
+    group gps inet system
+    disabled
+
+# Wait for framework initialization and the vendor location directories. Either
+# property changing re-evaluates this action, including a saved enabled setting
+# at boot. Missing/false control never starts XTRA implicitly with the class.
+on property:persist.sys.xtra-daemon.enabled=true && property:sys.boot_completed=1
+    start vendor.xtra-daemon
+
+# stop marks the service disabled as well as terminating it, so init will not
+# restart it after an explicit disable. A later true trigger starts it again.
+on property:persist.sys.xtra-daemon.enabled=false
+    stop vendor.xtra-daemon
