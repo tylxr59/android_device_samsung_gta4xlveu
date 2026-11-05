@@ -63,9 +63,8 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 # The audio service loads this AIDL provider and its VINTF fragment.
 # The current Bluetooth stack discovers providers through VINTF.
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio-impl \
     android.hardware.bluetooth@1.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
@@ -120,8 +119,8 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl
+    android.hardware.health-service.qti \
+    android.hardware.health-service.qti_recovery
 
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
